@@ -18,8 +18,10 @@ import com.yaizz.kisileruygulamasi.databinding.FragmentAnaSayfaBinding
 import com.yaizz.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.yaizz.kisileruygulamasi.ui.viewModel.AnasayfaViewModel
 import com.yaizz.kisileruygulamasi.ui.viewModel.KisiKayitViewModel
+import com.yaizz.kisileruygulamasi.utils.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class AnaSayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnaSayfaBinding
     private lateinit var viewModel: AnasayfaViewModel
@@ -74,7 +76,7 @@ class AnaSayfaFragment : Fragment() {
     }
 
     fun fabTikla(it:View){
-        Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+        Navigation.gecisYap(it,R.id.kisiKayitGecis)
     }
 
     override fun onResume() { //ana sayfaya dönünce kişileri yükle

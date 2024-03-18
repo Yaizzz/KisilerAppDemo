@@ -3,8 +3,8 @@ package com.yaizz.kisileruygulamasi.data.repo
 import com.yaizz.kisileruygulamasi.data.datasource.KisilerDataSource
 import com.yaizz.kisileruygulamasi.data.entity.Kisiler
 
-class KisilerRepository {
-    var kds = KisilerDataSource()
+class KisilerRepository(var kds : KisilerDataSource) {
+     //bağımlılık
 
     suspend fun kaydet(kisi_ad : String, kisi_tel : String) = kds.kaydet(kisi_ad,kisi_tel)// = yerine {}de olur
 

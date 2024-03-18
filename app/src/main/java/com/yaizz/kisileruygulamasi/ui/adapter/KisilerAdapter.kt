@@ -15,6 +15,7 @@ import com.yaizz.kisileruygulamasi.databinding.CardTasarimBinding
 import com.yaizz.kisileruygulamasi.databinding.FragmentAnaSayfaBinding
 import com.yaizz.kisileruygulamasi.ui.fragment.AnaSayfaFragmentDirections
 import com.yaizz.kisileruygulamasi.ui.viewModel.AnasayfaViewModel
+import com.yaizz.kisileruygulamasi.utils.gecisYap
 
 class KisilerAdapter(var mcontext : Context,var kisilerListesi : List<Kisiler>, var viewModel : AnasayfaViewModel)
     :RecyclerView.Adapter<KisilerAdapter.CardTasarimTutucu>()
@@ -46,7 +47,7 @@ class KisilerAdapter(var mcontext : Context,var kisilerListesi : List<Kisiler>, 
 
         t.cardViewSatir.setOnClickListener{
             val gecis = AnaSayfaFragmentDirections.kisiDetayGecis(kisi = kisi)
-            Navigation.findNavController(it).navigate(gecis)
+            Navigation.gecisYap(it,gecis)
         }
 
         t.imageViewSil.setOnClickListener {
